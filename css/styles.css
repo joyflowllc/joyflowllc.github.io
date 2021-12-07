@@ -1,0 +1,412 @@
+/* border-box tells the browser to account for any border and padding in the values you specify for an element's width and height. (qol) */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 20px;
+  line-height: 1;
+  margin: 0px;
+  padding: 0px;
+  background-color:rgb(32, 32, 32);
+  overflow-x: hidden;
+  color: white;
+}
+#bigLogo {
+  width: 100vw;
+  background-color: rgb(32, 32, 32); 
+  display:flex;
+  justify-content: space-evenly;
+  align-items:center;   
+  padding-left: 10.7vw;
+  padding-right: 10.7vw;
+  padding-bottom: 5vw;
+  padding-top: 5vw; 
+  overflow: hidden;
+}
+#bigLogo img {
+  width: 27vw;
+}
+.landingTitle {
+  padding:0px;
+  display: inline;
+  line-height: 0.2;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 8vw;
+  color:rgb(255, 6, 222);
+  text-align: right;
+}
+.joy {
+  color: rgb(255, 161, 242);
+}
+.landingTitle h1:last-child {
+  color:steelblue;
+  font-family:'Times New Roman', Times, serif;
+  padding-bottom: 3.7vw;
+  border-bottom: 0.94vw solid rgb(255, 217, 92);
+}
+
+#navbar {
+  width: 100vw;
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  background-color: rgb(255, 217, 92);
+  /* background-image: linear-gradient(rgb(255, 217, 92), rgba(255,255,255,0)); */
+  color:navy;
+  padding-left: 12.8vw;
+  padding-right: 12.8vw;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  z-index: 1;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+#brand-logo img {
+  width: 55px;
+}
+.navbar-links ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.navbar-links li { 
+  display: inline;
+  font-weight:350;
+  font-size: 22px;
+}
+.navbar-links li a {
+  text-decoration: none;
+  color: navy;
+  padding: 5px 30px;
+}
+.navbar-links li:hover {
+  text-decoration-line: underline;
+}
+
+.toggle-button {
+  position:absolute;
+  right: 30px;
+  top: 15px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 35px;
+  height: 33px; 
+}
+.toggle-button .bar,.bar3 {
+  height: 3px;
+  width: 100%;
+  background-color: navy;
+  border-radius: 10px; 
+} 
+.toggle-button .bar2 {
+  height: 3px;
+  width: 100%;
+  background-color:navy;
+  border-radius: 10px;
+}
+
+.logoScroll {
+  width: 100vw;
+  height: 8vw;
+  background-color:whitesmoke;
+  overflow: hidden;
+}
+.logos {
+  margin: 0;
+  padding: 0; 
+  list-style: none;
+  display: flex;
+  height: 100%;
+  animation: scrolling 42s linear infinite;
+}
+@keyframes scrolling {
+  0% {
+    /* starting from 0 means left edge of screen */
+    transform: translateX(0);
+  }
+  100%{
+    /* 15 elements times 35vw for each element = 525vw */
+    transform: translateX(-525vw);
+  }
+}
+
+.logos li {
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  width: 35vw;
+  height: 100%;
+  flex-shrink: 0;
+}
+.logos li img {
+  max-width: 80%;
+  max-height: 90%;
+}
+
+#description {
+  padding-top: 3vw;
+  padding-bottom: 3vw;
+  padding-right: 8vw;
+  padding-left: 8vw;
+  text-align:center;
+  font-weight: 350;
+  font-size: 2.3vh;
+  text-decoration: none;
+  color: white;
+}
+h1 {
+  font-weight: 350;
+} 
+
+.services {
+  padding: 3vw;
+  color: navy;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background-image: linear-gradient(45deg, deepskyblue, white);
+}
+.service {
+  background-color:rgb(255, 217, 92);
+  padding: 2vw;
+  margin-left: 3vw;
+  margin-right: 3vw;
+}
+.serviceTitle {
+  padding: 0;
+  margin: 0;
+  font-size: 4vw;
+  font-weight: 500;
+}
+.serviceDescription {
+  padding: 0;
+  font-size: 2vw;
+  font-weight: 350;
+}
+.services a {
+  margin: 3vw;
+}
+.services img {
+  width: 30vw;
+}
+
+ @media (max-width: 1200px) {
+  #navbar {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+} 
+
+@media (min-width:600px) {
+  .navbar-links li:first-child, .navbar-links li:nth-last-child(2) {
+    border-right:1px solid white;
+  }
+}
+@media (max-width: 600px) {
+  #bigLogo {
+    flex-direction: column;
+    /* to compensate for the nav bar on a different z index  */
+    margin-top: 58px;
+  }
+  .landingTitle {
+    font-size: 50px;
+    text-align: center;
+  }
+  .landingTitle h1:last-child {
+    padding-bottom: 25px;
+    margin: 15px;
+  }
+  #bigLogo img {
+    width: 40vw;
+    margin-bottom: 30px;
+  }
+  .toggle-button {
+    display: flex;
+  }
+  .navbar-links {
+    display: none;
+    width: 100%;
+  }
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    /* fixed works well with the greater z index that allows the menu to hover instead of pushing other elements down */
+    position: fixed;
+  }
+  .navbar-links ul {
+    width: 100%;
+    flex-direction: column;
+  }
+  .navbar-links li:first-child {
+    margin-top:5px;
+    border-top:1px solid navy;
+  }
+  .navbar-links li {
+    text-align: center;
+    display: block;
+  }
+  .navbar-links li a {
+    /*anchor hyperlink needs to be in block display so that all of it is clickable rather than just the text. */
+    display: block;
+    width: 100%;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+  .navbar-links li:hover {
+    text-decoration-line: none;
+    background-color:navy;
+  }
+  .navbar-links li a:hover {
+    color: rgb(255, 217, 92);
+  }
+  #brand-logo img {
+    padding-bottom: 0px;
+  }
+  .bar {
+    position: relative;
+    animation: uncross1 .4s cubic-bezier(1, 0, 0, 1) 1 forwards;
+  }
+  @keyframes uncross1 {
+    0% {
+      transform: translateY(15px) rotate(45deg);
+    }
+    50%{
+      transform: translateY(15px) rotate(0deg);
+    } 
+    100%{
+      transform: translateY(0px) rotate(0deg); 
+    }
+  }
+  .bar2 {
+    position: relative;
+    opacity: 0%;
+    animation: fadein .2s linear 1 forwards;
+    animation-delay: 0.1s;
+  }
+  @keyframes fadein {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    } 
+  }
+  .bar3 {
+    position: relative;
+    animation: uncross3 .4s cubic-bezier(1, 0, 0, 1) 1 forwards;
+    animation-fill-mode: forwards;
+  }
+  @keyframes uncross3 {
+    0% {
+      transform: translateY(-15px) rotate(-45deg);
+    }
+    50% {
+      transform: translateY(-15px) rotate(0deg);
+    } 
+    100%{
+      transform: translateY(0px) rotate(0deg);
+    }
+ }
+  .navbar-links.active {
+    display: flex;
+    transform-origin:top;
+    animation: dropDown .4s cubic-bezier(1, 0, 0, 1) forwards;
+  }
+  @keyframes dropDown {
+    0% {
+      transform: scaleY(0%);
+    }
+    100% {
+      transform: scaleY(100%);
+    }
+  }
+  .bar.active {
+    position: relative;
+    animation: cross1 .4s cubic-bezier(1, 0, 0, 1) 1 forwards;
+  }
+  @keyframes cross1 {
+    0%{
+      transform: translateY(0px) rotate(0deg);
+    }
+    50%{
+      transform: translateY(15px);
+    } 
+    100%{
+      transform: translateY(15px) rotate(45deg); 
+    }
+  }
+  .bar3.active {
+    position: relative;
+    animation: cross3 .4s cubic-bezier(1, 0, 0, 1) 1 forwards;
+    animation-fill-mode: forwards;
+  }
+  @keyframes cross3 {
+    0% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-15px);
+    } 
+    100%{
+      transform: translateY(-15px) rotate(-45deg);
+    }
+  }
+  .bar2.active {
+    position: relative;
+    animation: fade .2s linear 1 forwards;
+  }
+  @keyframes fade {
+    0% {
+      opacity: 100%;
+    }
+    100% {
+      opacity: 0%;
+    } 
+  }
+  
+  .logoScroll {
+    height: 15vw;
+  }
+  #description {
+    font-size: 15px;
+    line-height:27px;
+  }
+  .services {
+    flex-direction:column;
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    background-image: none;
+    background-color:rgb(255, 217, 92);
+  }
+  .service {
+    background-color: transparent;
+    padding-bottom: 0;
+  }
+  .serviceTitle {
+    font-size: 10vw;
+    text-align: center;
+  }
+  .serviceDescription {
+    text-align:center;
+    font-size: 6vw;
+    padding-left: .5vw;
+    padding-right: .5vw;
+  }
+  .services img {
+    width: 70vw;
+  }
+  .services a {
+    margin-bottom: 20vw;
+    margin-top: .5vw;
+  }
+  #serviceblock section:nth-last-child(2) {
+    background-color:rgb(32, 32, 32);
+    color:rgb(255, 217, 92);
+  }
+}
